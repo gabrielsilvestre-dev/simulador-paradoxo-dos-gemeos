@@ -1,0 +1,263 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#menu {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Apenas para visualização */
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Centraliza os botões verticalmente */
+}
+
+.button-container-menu {
+  display: flex;
+  flex-direction: column; /* Alinha os botões verticalmente */
+  gap: 50px; /* Espaçamento entre os botões */
+}
+
+.button-menu {
+  padding: 40px 80px;
+  font-size: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(62, 62, 62);
+  color: white;
+  font-weight: bold;
+}
+
+.button-menu:hover,
+#abrirMenu:hover {
+  background-color: #440069; /* Cor de hover */
+}
+
+#sobre,
+#creditos {
+  width: 100%;
+  height: 100%;
+  background-color: black; /* Apenas para visualização */
+  color: white;
+  display: flex;
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Centraliza os botões verticalmente */
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#espacoNave {
+  position: absolute;
+  top: 20px;
+  left: 12%;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+#velNave {
+  position: absolute;
+  top: 20px;
+  left: 70%; /* Faz com que a div comece após o fim da tela */
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+#idadeGrafico {
+  position: absolute;
+  bottom: 20px; /* Alinhado ao fundo da tela */
+  right: 20px; /* Alinhado à direita da tela */
+  max-width: 40%; /* Define a largura máxima do gráfico */
+  max-height: 40%; /* Define a altura máxima do gráfico */
+  z-index: 2; /* Coloca o gráfico acima da animação do irmão */
+}
+
+#gemeo_1 img,
+#gemeo_2 img {
+  max-width: 250px; /* Ajustado para 250px */
+  max-height: 250px; /* Ajustado para 250px */
+}
+
+#gemeo_1 {
+  position: absolute;
+  top: 20%; /* Ajustado para acomodar o novo tamanho */
+  left: 20px; /* Posição inicial ajustada */
+  will-change: left; /* Melhora a performance */
+  transition: left 0.1s; /* Suaviza a transição de movimento */
+  transform: rotateY(0);
+  z-index: 1; /* Garante que o irmão fique abaixo do gráfico */
+}
+
+#gemeo_2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1; /* Garante que a irmã fique abaixo do gráfico */
+}
+
+.moveRight {
+  animation: moveRight 5s linear forwards;
+}
+
+.moveLeft {
+  animation: moveLeft 5s linear forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    left: 20px; /* Começa da posição inicial */
+  }
+  100% {
+    left: calc(100% - 270px); /* Ajustado para o novo tamanho da imagem */
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    left: calc(100% - 270px); /* Inicia no ponto final da animação anterior */
+  }
+  100% {
+    left: 20px; /* Retorna ao ponto inicial */
+  }
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+button {
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  margin: 5px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+button:disabled {
+  background-color: #555;
+  color: #777;
+  cursor: not-allowed;
+  border: 2px solid #444;
+}
+
+#pauseButton,
+#restartButton {
+  display: none;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#yearsPassedGemeo1 {
+  position: absolute;
+  top: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+#yearsPassedGemeo2 {
+  color: white;
+  font-size: 24px;
+}
+
+.slidecontainer {
+  position: absolute;
+  top: 70px;
+  width: 30%;
+}
+
+.slider {
+  appearance: none; /* Propriedade padrão para todos os navegadores compatíveis */
+  -webkit-appearance: none; /* Para compatibilidade com navegadores baseados em WebKit */
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+.slider-disabled {
+  opacity: 0.5; /* Torna o slider mais transparente */
+  pointer-events: none; /* Impede a interação do mouse */
+  cursor: not-allowed; /* Altera o cursor para indicar que está desabilitado */
+}
+
+#abrirMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(62, 62, 62);
+  color: white;
+  font-weight: bold;
+}

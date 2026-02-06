@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador paradoxo dos gêmeos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="menu" style="display: flex">
+      <div class="button-container-menu">
+        <button class="button-menu" onclick="visualizarMenu()">Iniciar</button>
+        <button class="button-menu" onclick="visualizarSobre()">Sobre</button>
+        <button class="button-menu" onclick="visualizarCreditos()">
+          Créditos
+        </button>
+      </div>
+    </div>
+
+    <div id="sobre" style="display: none">
+      <button id="abrirMenu" onclick="visualizarMenu()">Abrir o menu</button>
+      <div style="text-align: center; font-size: 30px">
+        <p>Seja bem-vindo(a) ao simulador do Paradoxo dos Gêmeos!</p>
+        <br />
+        <p>
+          O objetivo desta simulação é demonstrar a dilatação temporal
+          relacionada com a diferença de velocidade entre dois corpos.
+        </p>
+        <br />
+        <p>
+          Altere o valor do slider para representar a velocidade da nave
+          espacial em relação à velocidade da luz no vácuo.
+        </p>
+        <br />
+        <p>
+          Observe a diferença entre as idades dos gêmeos, de acordo com a
+          respectiva velocidade da nave.
+        </p>
+      </div>
+    </div>
+
+    <div id="creditos" style="display: none">
+      <button id="abrirMenu" onclick="visualizarMenu()">Abrir o menu</button>
+      <div style="text-align: center; font-size: 30px">
+        <img src="imagens/gabriel/gabriel.png" alt="Gabriel" />
+        <br />
+        <p>Gabriel Silvestre</p>
+        <p>gabriel.silvestre0127@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <button id="abrirMenu" onclick="visualizarMenu()">Abrir o menu</button>
+      <div id="yearsPassedGemeo1">Idade do irmão: 0 anos</div>
+      <div class="slidecontainer">
+        <p style="color: white; text-align: center">
+          Velocidade da nave em relação à luz no vácuo:
+          <span id="velocidadeDaNave">50</span>
+          <span>%</span>
+        </p>
+        <input
+          type="range"
+          min="1"
+          max="99"
+          value="50"
+          class="slider"
+          id="myRange"
+        />
+      </div>
+
+      <div id="espacoNave">
+        <div>Distância percorrida em metros para o referêncial...</div>
+        <br />
+        <div id="distanciaPercorridaTerra">... da Terra: 0</div>
+        <br />
+        <div id="distanciaPercorridaNave">... da nave: 0</div>
+      </div>
+
+      <div id="velNave">
+        <div>Velocidade da luz no vácuo: 299792458 m/s</div>
+        <br />
+        <div id="velNaveMS">Velocidade da nave em m/s: 0</div>
+        <br />
+        <div id="velNaveKMH">Velocidade da nave em km/h: 0</div>
+      </div>
+
+      <div id="gemeo_1">
+        <img
+          id="imgGemeo1"
+          src="imagens/gemeo_1/01y_gemeo_1_space_rocket.png"
+          alt=""
+        />
+      </div>
+      <div id="gemeo_2">
+        <img id="imgGemeo2" src="imagens/gemeo_2/01y_gemeo_2.jpg" alt="" />
+        <span id="yearsPassedGemeo2">Idade da irmã: 0 anos</span>
+      </div>
+      <div class="button-container">
+        <button type="button" id="startButton" onclick="iniciarAnimacao(this)">
+          Iniciar animação
+        </button>
+        <button
+          type="button"
+          id="restartButton"
+          onclick="reiniciarAnimacao()"
+          style="display: none"
+        >
+          Reiniciar animação
+        </button>
+        <button type="button" id="pauseButton" onclick="toggleAnimacao()">
+          Pausar animação
+        </button>
+      </div>
+      <canvas id="idadeGrafico" width="400" height="400"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

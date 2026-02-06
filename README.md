@@ -27,11 +27,8 @@ Este projeto é um simulador interativo que demonstra o Paradoxo dos Gêmeos, um
 - JavaScript
 - Chart.js
 
-## ▶️ Acesse o simulador
-
-👉 (link do GitHub Pages aqui)
-
 ## 👤 Autor
 
 Gabriel Silvestre
+
 

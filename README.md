@@ -1,3 +1,6 @@
+🔗 **Demo online:**  
+https://gabrielsilvestre-dev.github.io/simulador-paradoxo-dos-gemeos/
+
 # Simulador do Paradoxo dos Gêmeos
 
 Este projeto é um simulador interativo que demonstra o Paradoxo dos Gêmeos, um efeito previsto pela Relatividade Restrita, onde dois observadores envelhecem de forma diferente devido à dilatação temporal causada pela velocidade próxima à da luz.
@@ -31,3 +34,4 @@ Este projeto é um simulador interativo que demonstra o Paradoxo dos Gêmeos, um
 ## 👤 Autor
 
 Gabriel Silvestre
+

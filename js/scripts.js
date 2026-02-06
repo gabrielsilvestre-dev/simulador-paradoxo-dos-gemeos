@@ -35,10 +35,10 @@ let ifsDasIdadesGemeo2 = {
 let dilatacaoTemporalGemeo2 = 0;
 let tempoDilatado = 0;
 let distanciaPercorridaNave = document.getElementById(
-  "distanciaPercorridaNave"
+  "distanciaPercorridaNave",
 );
 let distanciaPercorridaTerra = document.getElementById(
-  "distanciaPercorridaTerra"
+  "distanciaPercorridaTerra",
 );
 var slider = document.getElementById("myRange");
 var output = document.getElementById("velocidadeDaNave");
@@ -118,76 +118,76 @@ function updateVelNave() {
 function equacaoDilatacaoTemporal(elapsedYears) {
   const velocidadeNave = 1 - (slider.value / 100) ** 2;
   dilatacaoTemporalGemeo2 = Math.round(
-    elapsedYears / Math.sqrt(velocidadeNave)
+    elapsedYears / Math.sqrt(velocidadeNave),
   );
   return dilatacaoTemporalGemeo2;
 }
 
 function alterarImagemGemeo1(elapsedYears) {
   if (elapsedYears >= 10 && elapsedYears < 18 && !ifsDasIdadesGemeo1["10"]) {
-    imgGemeo1.src = "Imagens/gemeo_1/10y_gemeo_1_space_rocket.png";
+    imgGemeo1.src = "imagens/gemeo_1/10y_gemeo_1_space_rocket.png";
     ifsDasIdadesGemeo1["10"] = true;
   } else if (
     elapsedYears >= 18 &&
     elapsedYears < 30 &&
     !ifsDasIdadesGemeo1["18"]
   ) {
-    imgGemeo1.src = "Imagens/gemeo_1/18y_gemeo_1_space_rocket.png";
+    imgGemeo1.src = "imagens/gemeo_1/18y_gemeo_1_space_rocket.png";
     ifsDasIdadesGemeo1["18"] = true;
   } else if (
     elapsedYears >= 30 &&
     elapsedYears < 50 &&
     !ifsDasIdadesGemeo1["30"]
   ) {
-    imgGemeo1.src = "Imagens/gemeo_1/30y_gemeo_1_space_rocket.png";
+    imgGemeo1.src = "imagens/gemeo_1/30y_gemeo_1_space_rocket.png";
     ifsDasIdadesGemeo1["30"] = true;
   } else if (
     elapsedYears >= 50 &&
     elapsedYears < 80 &&
     !ifsDasIdadesGemeo1["50"]
   ) {
-    imgGemeo1.src = "Imagens/gemeo_1/50y_gemeo_1_space_rocket.png";
+    imgGemeo1.src = "imagens/gemeo_1/50y_gemeo_1_space_rocket.png";
     ifsDasIdadesGemeo1["50"] = true;
   } else if (elapsedYears >= 80 && !ifsDasIdadesGemeo1["80"]) {
-    imgGemeo1.src = "Imagens/gemeo_1/80y_gemeo_1_space_rocket.png";
+    imgGemeo1.src = "imagens/gemeo_1/80y_gemeo_1_space_rocket.png";
     ifsDasIdadesGemeo1["80"] = true;
   }
 }
 
 function alterarImagemGemeo2(tempoDilatado) {
   if (tempoDilatado >= 10 && tempoDilatado < 18 && !ifsDasIdadesGemeo2["10"]) {
-    imgGemeo2.src = "Imagens/gemeo_2/10y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/10y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["10"] = true;
   } else if (
     tempoDilatado >= 18 &&
     tempoDilatado < 30 &&
     !ifsDasIdadesGemeo2["18"]
   ) {
-    imgGemeo2.src = "Imagens/gemeo_2/18y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/18y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["18"] = true;
   } else if (
     tempoDilatado >= 30 &&
     tempoDilatado < 50 &&
     !ifsDasIdadesGemeo2["30"]
   ) {
-    imgGemeo2.src = "Imagens/gemeo_2/30y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/30y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["30"] = true;
   } else if (
     tempoDilatado >= 50 &&
     tempoDilatado < 80 &&
     !ifsDasIdadesGemeo2["50"]
   ) {
-    imgGemeo2.src = "Imagens/gemeo_2/50y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/50y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["50"] = true;
   } else if (
     tempoDilatado >= 80 &&
     tempoDilatado < 100 &&
     !ifsDasIdadesGemeo2["80"]
   ) {
-    imgGemeo2.src = "Imagens/gemeo_2/80y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/80y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["80"] = true;
   } else if (tempoDilatado >= 100 && !ifsDasIdadesGemeo2["100"]) {
-    imgGemeo2.src = "Imagens/gemeo_2/100y_gemeo_2.jpg";
+    imgGemeo2.src = "imagens/gemeo_2/100y_gemeo_2.jpg";
     ifsDasIdadesGemeo2["100"] = true;
   }
 }
@@ -195,8 +195,8 @@ function alterarImagemGemeo2(tempoDilatado) {
 element.addEventListener("animationstart", function () {
   slider.disabled = true;
   slider.classList.add("slider-disabled");
-  imgGemeo1.src = "Imagens/gemeo_1/01y_gemeo_1_space_rocket.png";
-  imgGemeo2.src = "Imagens/gemeo_2/01y_gemeo_2.jpg";
+  imgGemeo1.src = "imagens/gemeo_1/01y_gemeo_1_space_rocket.png";
+  imgGemeo2.src = "imagens/gemeo_2/01y_gemeo_2.jpg";
   ifsDasIdadesGemeo1 = {
     10: false,
     18: false,
@@ -238,7 +238,7 @@ function atualizarAnos(elapsedTime) {
   animationProgress = (elapsedTime % 10) / 10;
   elapsedYears = Math.min(
     totalYears,
-    Math.round(animationProgress * totalYears)
+    Math.round(animationProgress * totalYears),
   );
   tempoDilatado = equacaoDilatacaoTemporal(elapsedYears);
   yearsPassedGemeo1Element.textContent = `Idade do irmão: ${elapsedYears} anos`;
